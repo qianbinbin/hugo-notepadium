@@ -5,3 +5,17 @@
         </section>
     {{- end -}}
 {{- end -}}
+
+{{- if isset .Site.Params.comments "utterancesrepo" -}}
+    {{- if $.Param "comments.enable" | default false -}}
+        <section class="article discussion">
+            <script src="https://utteranc.es/client.js"
+                    repo="{{- .Site.Params.comments.utterancesRepo -}}"
+                    issue-term='{{- .Site.Params.comments.utterancesIssueTerm | default "pathname" -}}'
+                    theme='{{- .Site.Params.comments.utterancesTheme | default "github-light" -}}'
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </section>
+    {{- end -}}
+{{- end -}}
