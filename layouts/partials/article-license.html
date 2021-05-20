@@ -5,6 +5,8 @@
     {{- $license = site.Params.license -}}
 {{- end -}}
 
+{{- $license := $.Param "license" | default "" -}}
+
 {{- if ne $license "" -}}
 <section class="article license">
     {{- $license | safeHTML -}}
