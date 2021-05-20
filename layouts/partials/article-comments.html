@@ -9,12 +9,23 @@
 {{- if isset .Site.Params.comments "utterancesrepo" -}}
     {{- if $.Param "comments.enable" | default false -}}
         <section class="article discussion">
-            <script src="https://utteranc.es/client.js"
-                    repo="{{- .Site.Params.comments.utterancesRepo -}}"
-                    issue-term='{{- .Site.Params.comments.utterancesIssueTerm | default "pathname" -}}'
-                    theme='{{- .Site.Params.comments.utterancesTheme | default "github-light" -}}'
-                    crossorigin="anonymous"
-                    async>
+            <script>
+                function loadComment() {
+                    let theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'github-dark' : 'github-light';
+                    let s = document.createElement('script');
+                    s.src = 'https://utteranc.es/client.js';
+                    s.setAttribute('repo', '{{- .Site.Params.comments.utterancesRepo -}}');
+                    s.setAttribute('issue-term', '{{- .Site.Params.comments.utterancesIssueTerm | default "pathname" -}}');
+                    s.setAttribute('theme', theme);
+                    s.setAttribute('crossorigin', 'anonymous');
+                    s.setAttribute('async', '');
+                    document.querySelector('section.article.discussion').innerHTML = '';
+                    document.querySelector('section.article.discussion').appendChild(s);
+                }
+
+                loadComment();
+                if (window.matchMedia)
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {loadComment();});
             </script>
         </section>
     {{- end -}}
