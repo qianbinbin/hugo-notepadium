@@ -6,7 +6,8 @@
                 {{- end -}}
                 <span class="site name">{{- site.Title | safeHTML -}}</span></a></span>
         <span class="header right-side">
-            {{- partial "navigation-items.html" site.Params.nav -}}
+            <!-- {{- partial "navigation-items.html" site.Params.nav -}} -->
+            {{- partial "sidebar.html" . -}}
         </span></div>
     {{- with site.Params.slogan -}}
         <div class="site slogan"><span class="title">{{- . | safeHTML -}}</span></div>
