@@ -1,5 +1,8 @@
 {{- if .Content -}}
-<article class="article markdown-body">
-    {{- .Content -}}
-</article>
+<div class="article-container">
+    {{- partial "article-header.html" . -}}
+    <article class="article markdown-body">
+        {{- .Content -}}
+    </article>
+</div>
 {{- end -}}
