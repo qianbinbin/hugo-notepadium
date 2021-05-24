@@ -723,11 +723,6 @@ b {
 }
 
 /* mathjax & katex patch */
-
-.article.markdown-body .katex-display {
-  display: inline-block;
-}
-
 .article.markdown-body .katex,
 .article.markdown-body .MathJax {
   margin: 0;
