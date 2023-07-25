@@ -256,6 +256,11 @@ b {
   margin-bottom: 30px;
 }
 
+#back-to-top {
+  color: rgba(29, 43, 76, .85);
+  background-color: #fff;
+}
+
 .header.wrap {
   overflow: hidden;
 }

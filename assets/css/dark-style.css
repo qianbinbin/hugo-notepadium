@@ -107,6 +107,11 @@ b,
   background-color: #21262d;
 }
 
+#back-to-top {
+  color: #c7d5f6;
+  background: #21262d;
+}
+
 .note.list .item {
   background-color: #21262d;
   box-shadow: inset -1px 0 0 0 rgba(14, 17, 21, .6),
