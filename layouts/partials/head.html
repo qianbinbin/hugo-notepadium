@@ -7,6 +7,19 @@
 <link rel="icon" href="{{- . -}}"/>
 {{- end -}}
 
+{{- $description := "" -}}
+{{- if .IsPage -}}
+  {{- if .Params.Description -}}
+    {{- $description = .Params.Description -}}
+  {{- else -}}
+    {{- $description = .Summary -}}
+  {{- end -}}
+{{- else if .Params.Description -}}
+  {{- $description = .Params.Description -}}
+{{- else -}}
+  {{- $description = .Site.Params.Description -}}
+{{- end -}}
+<meta name="description" content="{{- $description -}}">
 {{- define "title" -}}
     {{- $title := .Title -}}
     {{- if and (ne $title "") (ne $title site.Title) -}}
