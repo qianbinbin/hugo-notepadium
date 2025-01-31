@@ -18,6 +18,17 @@ async function init() {
         search_menu_input.focus();
     });
 
+    document.addEventListener('keydown', function (event) {
+        const isSlashKey = event.key === '/' || event.keyCode === 191;
+        const isCmdK = (event.metaKey || event.ctrlKey) && event.key === 'k';
+        if (isSlashKey || isCmdK) {
+            if (document.activeElement !== search_menu_input) {
+                event.preventDefault();
+                search_btn.click();
+            }
+        }
+    });
+
     search_menu_close_btn.addEventListener("click", function () {
         search_menu_wrapper.classList.add("hidden");
     });
