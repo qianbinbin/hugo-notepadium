@@ -62,7 +62,7 @@
   flex-grow: 1;
 }
 
-#search_menu_input_wrapper input {
+#search_menu_input {
   padding-left: 24px;
   padding-right: 24px;
   flex-grow: 1;
@@ -72,7 +72,7 @@
   background-color: #fff;
 }
 
-#search_menu_input_wrapper input:focus {
+#search_menu_input:focus {
   outline: none;
   background-color: rgba(0, 0, 0, .1);
 }

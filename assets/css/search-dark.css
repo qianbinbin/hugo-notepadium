@@ -6,11 +6,11 @@
   background-color: #21262d;
 }
 
-#search_menu_input_wrapper input {
+#search_menu_input {
   background-color: #21262d;
 }
 
-#search_menu_input_wrapper input:focus {
+#search_menu_input:focus {
   background-color: rgba(255, 255, 255, .1);
 }
 
