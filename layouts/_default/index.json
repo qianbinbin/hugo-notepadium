@@ -1,0 +1,8 @@
+{{- /* Modified from https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/layouts/_default/index.json (MIT Licensed) */ -}}
+{{- $index := slice -}}
+{{- range .Site.RegularPages -}}
+    {{- if .Params.enableSearch | default true -}}
+        {{- $index = $index | append (dict "title" .Title "content" (.Content | safeHTML | replaceRE `(<div[^>]*highlight[^>]*>\s*<div[^>]*>\s*<table[^>]*>\s*<tr[^>]*>\s*<td[^>]*>\s*)(<pre[^>]*>\s*<code[^>]*>(\s*<span[^>]*>\s*.*\s*(<\/span>)+)*\s*<\/code>\s*<\/pre>)(\s*<\/td>\s*<td[^>]*>\s*<pre[^>]*>)` "$1$5" | plainify) "permalink" .Permalink) -}}
+    {{- end -}}
+{{- end -}}
+{{- $index | jsonify -}}

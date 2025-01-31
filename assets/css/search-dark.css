@@ -1,0 +1,23 @@
+#search_btn {
+  color: #c7d5f6;
+}
+
+#search_menu_toolbar {
+  background-color: #21262d;
+}
+
+#search_menu_input_wrapper input {
+  background-color: #21262d;
+}
+
+#search_menu_input_wrapper input:focus {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+#search_menu_close_btn {
+  background-color: #21262d;
+}
+
+#search_menu_close_btn:hover {
+  background-color: rgba(41,151,255,.5);
+}

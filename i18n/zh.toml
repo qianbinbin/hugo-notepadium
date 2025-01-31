@@ -10,3 +10,6 @@ other = "分类"
 
 [Tags]
 other = "标签"
+
+[Search]
+other = "搜索..."

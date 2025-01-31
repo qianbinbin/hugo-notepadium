@@ -10,3 +10,6 @@ other = "Categories"
 
 [Tags]
 other = "Tags"
+
+[Search]
+other = "Search..."

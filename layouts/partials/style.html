@@ -5,8 +5,14 @@
 
 {{- $coreCSS := resources.Get "css/normalize.css" -}}
 {{- $coreCSS = slice $coreCSS (resources.Get "css/style.css") | resources.Concat "css/tmp_normalize.css" -}}
+{{- if site.Params.enableSearch | default false -}}
+  {{- $coreCSS = slice $coreCSS (resources.Get "css/search.css") | resources.Concat "css/tmp_search.css" -}}
+{{- end -}}
 {{- if ne $style "light" -}}
     {{- $darkStyle := resources.Get "css/dark-style.css" -}}
+    {{- if site.Params.enableSearch | default false -}}
+      {{- $darkStyle = slice $darkStyle (resources.Get "css/search-dark.css") | resources.Concat "css/tmp_search_dark.css" -}}
+    {{- end -}}
     {{- if $darkStyle -}}
     {{- if eq $style "dark" -}}
         {{- $coreCSS = slice $coreCSS $darkStyle | resources.Concat "css/tmp_style.css" -}}

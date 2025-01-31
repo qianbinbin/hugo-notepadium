@@ -1,0 +1,13 @@
+{{- /* Modified from https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/layouts/partials/resources/js.html (MIT Licensed) */ -}}
+{{- if site.Params.enableSearch | default false -}}
+    {{ $target_path := printf "js/search-%s.js" .Site.LanguageCode }}
+    {{ $index_url := "index.json" | absLangURL }}
+    {{ $build_opts := dict "targetPath" $target_path "params" (dict "index_url" $index_url) }}
+    {{ $search_js := resources.Get "js/search.js" | js.Build $build_opts }}
+    {{- if hugo.IsProduction -}}
+        {{ $search_js = $search_js | js.Build (merge $build_opts (dict "minify" true)) | resources.Fingerprint "sha256" -}}
+    {{- else -}}
+        {{ $search_js = $search_js | js.Build $build_opts -}}
+    {{- end -}}
+    <script defer src="{{ $search_js.RelPermalink }}" integrity="{{- $search_js.Data.Integrity -}}"></script>
+{{- end -}}
