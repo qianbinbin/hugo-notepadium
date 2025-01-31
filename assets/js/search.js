@@ -22,6 +22,18 @@ async function init() {
         search_menu_wrapper.classList.add("hidden");
     });
 
+    search_menu_wrapper.addEventListener("click", function () {
+        if (event.target === this) {
+            search_menu_wrapper.classList.add("hidden");
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            search_menu_wrapper.classList.add("hidden");
+        }
+    });
+
     const data = await (await response).json();
     const opts = {
         unicode: true,
