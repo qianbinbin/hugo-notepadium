@@ -1,7 +1,7 @@
 // Modified from https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/assets/js/search.js (MIT Licensed)
 
 import * as params from '@params';
-import uFuzzy from './uFuzzy-v1.0.14.esm.js';
+import uFuzzy from './uFuzzy-v1.0.18.esm.js';
 
 async function init() {
     const defaultContextLen = 100;
