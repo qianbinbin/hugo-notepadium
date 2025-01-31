@@ -171,13 +171,14 @@ async function init() {
 
     search_menu_input.addEventListener("input", function () {
         if (this.value === '') {
-            buildAllItems();
+            // buildAllItems();
+            search_menu_results.innerHTML = '';
         } else {
             search(this.value.trim());
         }
     });
 
-    buildAllItems();
+    // buildAllItems();
 }
 
 window.addEventListener("DOMContentLoaded", init);
