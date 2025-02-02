@@ -265,10 +265,12 @@ b {
   overflow: hidden;
 }
 
+/*
 .header.wrap,
 .nav.wrap {
   margin-top: -5px;
 }
+*/
 
 .header.wrap>*,
 .nav.wrap>* {
