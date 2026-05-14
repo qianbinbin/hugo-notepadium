@@ -1,6 +1,6 @@
 {{- /* Modified from https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/layouts/partials/resources/js.html (MIT Licensed) */ -}}
 {{- if site.Params.enableSearch | default false -}}
-    {{ $target_path := printf "js/search-%s.js" .Site.LanguageCode }}
+    {{ $target_path := printf "js/search-%s.js" .Site.Language.Locale }}
     {{ $index_url := "index.json" | absLangURL }}
     {{ $build_opts := dict "targetPath" $target_path "params" (dict "index_url" $index_url) }}
     {{ $search_js := resources.Get "js/search.js" | js.Build $build_opts }}
